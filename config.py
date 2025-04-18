@@ -1,11 +1,15 @@
 
 from dotenv import load_dotenv
 import os
+import streamlit as st
 
 load_dotenv()
 
-openrouter_api_key = os.getenv("openrouter_api_key")
-your_serpapi_key= os.getenv("your_serpapi_key")
+#openrouter_api_key = os.getenv("openrouter_api_key")
+#your_serpapi_key= os.getenv("your_serpapi_key")
+
+openrouter_api_key = st.secrets.get("openrouter_api_key")
+your_serpapi_key= st.secrets.get("your_serpapi_key")
 
 #print(f"openrouter_api_key: {openrouter_api_key}")  # Debug print
 #print(f"your_serpapi_key: {your_serpapi_key}")  # Debug print
