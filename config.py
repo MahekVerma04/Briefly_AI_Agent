@@ -4,8 +4,8 @@ import os
 
 load_dotenv()
 
-openrouter_api_key = os.getenv("openrouter_api_key").strip()
-your_serpapi_key=os.getenv("your_serpapi_key").strip()
+openrouter_api_key = os.getenv("openrouter_api_key","").strip()
+your_serpapi_key=os.getenv("your_serpapi_key","").strip()
 
 if not openrouter_api_key or not your_serpapi_key:
     print("Error: API keys are missing or not loaded.")
