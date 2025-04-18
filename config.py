@@ -5,8 +5,11 @@ import streamlit as st
 
 load_dotenv()
 
-openrouter_api_key = os.getenv("openrouter_api_key")
-your_serpapi_key= os.getenv("your_serpapi_key")
+openrouter_api_key = st.secrets.get("openrouter_api_key", os.getenv("openrouter_api_key", ""))
+your_serpapi_key = st.secrets.get("your_serpapi_key", os.getenv("your_serpapi_key", ""))
+
+#openrouter_api_key = os.getenv("openrouter_api_key")
+#your_serpapi_key= os.getenv("your_serpapi_key")
 
 #openrouter_api_key = st.secrets.get("openrouter_api_key")
 #your_serpapi_key= st.secrets.get("your_serpapi_key")
